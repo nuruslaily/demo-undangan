@@ -11,26 +11,111 @@
   --text-light: #666;
   --bg-light: #faf9f7;
   --white: #ffffff;
+  --rose-gold: #d4a574;
+  --pink-light: #ffd6e8;
+  --pink-accent: #ff69b4;
 }
 
 body {
   font-family: "Playfair Display", "Georgia", serif;
-  background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8f0 100%);
   color: var(--text-dark);
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   background: var(--white);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.15);
+  position: relative;
+}
+
+/* Floating Decorations */
+.floating-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flower,
+.heart {
+  position: absolute;
+  opacity: 0.6;
+  font-size: 2.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.flower-1 {
+  left: 5%;
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.flower-2 {
+  right: 10%;
+  top: 20%;
+  animation-delay: 1s;
+}
+
+.flower-3 {
+  left: 15%;
+  top: 50%;
+  animation-delay: 2s;
+}
+
+.flower-4 {
+  right: 5%;
+  bottom: 30%;
+  animation-delay: 3s;
+}
+
+.flower-5 {
+  left: 8%;
+  bottom: 15%;
+  animation-delay: 4s;
+}
+
+.heart-1 {
+  left: 50%;
+  top: 15%;
+  font-size: 2rem;
+  animation-delay: 0.5s;
+}
+
+.heart-2 {
+  right: 20%;
+  top: 60%;
+  font-size: 1.8rem;
+  animation-delay: 1.5s;
+}
+
+.heart-3 {
+  left: 30%;
+  bottom: 25%;
+  font-size: 2rem;
+  animation-delay: 2.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc8 100%);
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8f0 100%);
   padding: 80px 40px;
   text-align: center;
   border-bottom: 3px solid var(--primary-color);
@@ -45,17 +130,43 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 2px;
-  background: var(--primary-color);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
 }
 
 .hero::after {
   content: "✿";
   position: absolute;
-  top: 30px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
   color: var(--primary-color);
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.top-ornament {
+  font-size: 24px;
+  letter-spacing: 10px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.hero-decoration {
+  margin-bottom: 20px;
 }
 
 .title {
@@ -65,6 +176,43 @@ body {
   color: var(--text-light);
   margin-bottom: 20px;
   text-transform: uppercase;
+}
+
+.flower-accent {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.petal {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.accent-top .petal:nth-child(2) {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .couple-names {
@@ -96,9 +244,53 @@ body {
   margin-top: 20px;
 }
 
+.heart-trail {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.heart-trail span {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.heart-trail span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.heart-trail span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
 /* Details Section */
 .details {
   padding: 60px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.divider-top,
+.divider-bottom {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.divider-flower {
+  animation: spin 3s linear infinite;
+  display: inline-block;
 }
 
 .invitation-text {
@@ -110,15 +302,18 @@ body {
 }
 
 .event-info {
-  background: var(--bg-light);
+  background: linear-gradient(135deg, #fffaf5 0%, #fff5f7 100%);
   padding: 40px;
   border-radius: 8px;
   margin-bottom: 40px;
   border-left: 5px solid var(--primary-color);
+  border-right: 2px solid var(--pink-light);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
 }
 
 .info-item {
   margin-bottom: 30px;
+  position: relative;
 }
 
 .info-item:last-child {
@@ -131,6 +326,14 @@ body {
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.icon-heart,
+.icon-utensil,
+.icon-location {
+  color: var(--pink-accent);
+  margin: 0 8px;
+  font-size: 16px;
 }
 
 .date,
@@ -156,10 +359,25 @@ body {
 .rsvp-section {
   text-align: center;
   padding: 30px;
-  background: linear-gradient(135deg, #fffdf7 0%, #faf9f7 100%);
+  background: linear-gradient(135deg, #fff9fb 0%, #fff5f8 100%);
   border-radius: 8px;
   margin-bottom: 30px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--pink-accent);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
+  position: relative;
+}
+
+.rsvp-decoration {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.flower-rsvp,
+.heart-rsvp {
+  animation: float 4s ease-in-out infinite;
 }
 
 .rsvp-text {
@@ -181,20 +399,39 @@ body {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: var(--secondary-color);
+  color: var(--pink-accent);
+  text-decoration: underline;
 }
 
 /* Dress Code */
 .dress-code {
   text-align: center;
   padding: 20px;
-  background: var(--bg-light);
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8f0 100%);
   border-radius: 8px;
   margin-bottom: 30px;
+  border: 2px dashed var(--primary-color);
+  position: relative;
+}
+
+.dress-code-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
 .dress-code h4 {
@@ -212,16 +449,127 @@ body {
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc8 100%);
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe8f0 100%);
   padding: 30px;
   text-align: center;
   border-top: 3px solid var(--primary-color);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-hearts {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.footer-heart {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.footer-heart:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.footer-heart:nth-child(3) {
+  animation-delay: 0.4s;
 }
 
 .footer p {
   font-size: 16px;
   color: var(--text-dark);
   font-style: italic;
+  margin: 10px 0;
+}
+
+.footer-flowers {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+
+.footer-flowers span {
+  animation: float 6s ease-in-out infinite;
+}
+
+.footer-flowers span:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.footer-flowers span:nth-child(3) {
+  animation-delay: 2s;
+}
+
+/* Music Player */
+.music-player {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.music-btn {
+  background: linear-gradient(135deg, #d4af37, #e8c957);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
+}
+
+.music-btn.playing {
+  background: linear-gradient(135deg, #ff69b4, #ff85c3);
+  animation: musicPulse 1s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%,
+  100% {
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(255, 105, 180, 0.6);
+  }
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.music-info p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+#backgroundMusic {
+  display: none;
 }
 
 /* Responsive Design */
@@ -260,6 +608,27 @@ body {
   .address {
     font-size: 14px;
   }
+
+  .flower,
+  .heart {
+    font-size: 2rem;
+  }
+
+  .music-player {
+    top: 15px;
+    right: 15px;
+    padding: 10px 14px;
+  }
+
+  .music-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .music-info p {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -291,5 +660,14 @@ body {
 
   .invitation-text {
     font-size: 16px;
+  }
+
+  .flower,
+  .heart {
+    font-size: 1.5rem;
+  }
+
+  .heart-trail {
+    font-size: 1.2rem;
   }
 }

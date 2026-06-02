@@ -5,41 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wedding Invitation</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
+      <!-- Music Player -->
+      <div class="music-player">
+        <button id="musicToggle" class="music-btn" title="Play/Pause Music">
+          <i class="fas fa-music"></i>
+        </button>
+        <div class="music-info">
+          <p id="songTitle">🎵 Romantic Music</p>
+        </div>
+        <audio id="backgroundMusic" loop>
+          <!-- NEW - Using local music file -->
+          <source
+            src="assets/music/the_mountain-wedding-522480.mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Floating Decorations -->
+      <div class="floating-flowers">
+        <div class="flower flower-1">🌸</div>
+        <div class="flower flower-2">🌹</div>
+        <div class="flower flower-3">💐</div>
+        <div class="flower flower-4">🌺</div>
+        <div class="flower flower-5">🌷</div>
+        <div class="heart heart-1">💕</div>
+        <div class="heart heart-2">💖</div>
+        <div class="heart heart-3">💗</div>
+      </div>
+
       <!-- Hero Section -->
       <section class="hero">
+        <div class="hero-decoration">
+          <div class="top-ornament">✿ ✿ ✿</div>
+        </div>
+
         <div class="hero-content">
           <h1 class="title">Together with</h1>
+
+          <div class="flower-accent accent-top">
+            <span class="petal">🌹</span>
+            <span class="petal">🌸</span>
+            <span class="petal">🌹</span>
+          </div>
+
           <h2 class="couple-names">
             <span class="name">Sarah</span>
             <span class="ampersand">&</span>
             <span class="name">John</span>
           </h2>
+
+          <div class="flower-accent accent-bottom">
+            <span class="petal">🌷</span>
+            <span class="petal">🌺</span>
+            <span class="petal">🌷</span>
+          </div>
+
           <p class="subtitle">request the honor of your presence</p>
+
+          <div class="heart-trail">
+            <span>💕</span>
+            <span>💖</span>
+            <span>💗</span>
+          </div>
         </div>
       </section>
 
       <!-- Invitation Details -->
       <section class="details">
         <div class="details-content">
+          <div class="divider-top">
+            <span class="divider-flower">🌹</span>
+          </div>
+
           <p class="invitation-text">as we celebrate the union of our lives</p>
 
           <div class="event-info">
             <div class="info-item">
-              <h3>Wedding Ceremony</h3>
+              <h3>
+                <i class="fas fa-heart icon-heart"></i>
+                Wedding Ceremony
+                <i class="fas fa-heart icon-heart"></i>
+              </h3>
               <p class="date"><i class="icon">📅</i> Saturday, June 15, 2024</p>
               <p class="time"><i class="icon">⏰</i> 4:00 PM</p>
             </div>
 
             <div class="info-item">
-              <h3>Reception Dinner</h3>
+              <h3>
+                <i class="fas fa-utensils icon-utensil"></i>
+                Reception Dinner
+                <i class="fas fa-utensils icon-utensil"></i>
+              </h3>
               <p class="time"><i class="icon">🍽️</i> 6:00 PM</p>
             </div>
 
             <div class="info-item">
-              <h3>Venue</h3>
+              <h3>
+                <i class="fas fa-map-marker-alt icon-location"></i>
+                Venue
+                <i class="fas fa-map-marker-alt icon-location"></i>
+              </h3>
               <p class="location"><i class="icon">📍</i> The Grand Ballroom</p>
               <p class="address">
                 123 Wedding Lane<br />San Francisco, CA 94102
@@ -48,6 +122,12 @@
           </div>
 
           <div class="rsvp-section">
+            <div class="rsvp-decoration">
+              <span class="flower-rsvp">🌸</span>
+              <span class="heart-rsvp">💕</span>
+              <span class="flower-rsvp">🌸</span>
+            </div>
+
             <p class="rsvp-text">RSVP by May 31, 2024</p>
             <p class="contact-info">
               📧
@@ -58,16 +138,33 @@
           </div>
 
           <div class="dress-code">
+            <div class="dress-code-icon">✨</div>
             <h4>Dress Code</h4>
             <p>Black Tie Optional</p>
+          </div>
+
+          <div class="divider-bottom">
+            <span class="divider-flower">🌺</span>
           </div>
         </div>
       </section>
 
       <!-- Footer -->
       <footer class="footer">
+        <div class="footer-hearts">
+          <span class="footer-heart">💖</span>
+          <span class="footer-heart">💕</span>
+          <span class="footer-heart">💗</span>
+        </div>
         <p>We can't wait to celebrate with you!</p>
+        <div class="footer-flowers">
+          <span>🌹</span>
+          <span>🌸</span>
+          <span>🌷</span>
+        </div>
       </footer>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
