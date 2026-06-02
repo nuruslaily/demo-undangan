@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #d4af37;
+  --secondary-color: #8b7355;
+  --text-dark: #2c2c2c;
+  --text-light: #666;
+  --bg-light: #faf9f7;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Playfair Display", "Georgia", serif;
+  background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc8 100%);
+  padding: 80px 40px;
+  text-align: center;
+  border-bottom: 3px solid var(--primary-color);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.hero::after {
+  content: "✿";
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.couple-names {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+.name {
+  display: block;
+  margin: 10px 0;
+}
+
+.ampersand {
+  font-size: 48px;
+  color: var(--primary-color);
+  margin: 10px 0;
+  display: block;
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* Details Section */
+.details {
+  padding: 60px 40px;
+}
+
+.invitation-text {
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 50px;
+  font-style: italic;
+}
+
+.event-info {
+  background: var(--bg-light);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.info-item {
+  margin-bottom: 30px;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item h3 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.date,
+.time,
+.location,
+.address {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: var(--text-light);
+  margin: 5px 0;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.address {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* RSVP Section */
+.rsvp-section {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #fffdf7 0%, #faf9f7 100%);
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 2px solid var(--primary-color);
+}
+
+.rsvp-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-info {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--secondary-color);
+}
+
+/* Dress Code */
+.dress-code {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.dress-code h4 {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dress-code p {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc8 100%);
+  padding: 30px;
+  text-align: center;
+  border-top: 3px solid var(--primary-color);
+}
+
+.footer p {
+  font-size: 16px;
+  color: var(--text-dark);
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 30px;
+  }
+
+  .couple-names {
+    font-size: 48px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .details {
+    padding: 40px 30px;
+  }
+
+  .event-info {
+    padding: 30px;
+  }
+
+  .invitation-text {
+    font-size: 18px;
+  }
+
+  .info-item h3 {
+    font-size: 16px;
+  }
+
+  .date,
+  .time,
+  .location,
+  .address {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .couple-names {
+    font-size: 36px;
+  }
+
+  .ampersand {
+    font-size: 32px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .details {
+    padding: 30px 20px;
+  }
+
+  .event-info,
+  .rsvp-section,
+  .dress-code {
+    padding: 20px;
+  }
+
+  .invitation-text {
+    font-size: 16px;
+  }
+}
