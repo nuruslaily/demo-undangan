@@ -21,7 +21,6 @@
           <p id="songTitle">🎵 Romantic Music</p>
         </div>
         <audio id="backgroundMusic" loop>
-          <!-- NEW - Using local music file -->
           <source
             src="assets/music/the_mountain-wedding-522480.mp3"
             type="audio/mpeg"
@@ -42,7 +41,7 @@
         <div class="heart heart-3">💗</div>
       </div>
 
-      <!-- Hero Section -->
+      <!-- Hero Section with Photos -->
       <section class="hero">
         <div class="hero-decoration">
           <div class="top-ornament">✿ ✿ ✿</div>
@@ -50,6 +49,25 @@
 
         <div class="hero-content">
           <h1 class="title">Together with</h1>
+
+          <!-- Couple Photo Gallery -->
+          <div class="couple-photos">
+            <div class="photo-frame bride-frame">
+              <img
+                src="assets/img/bride.jpeg"
+                alt="Bride"
+                class="couple-photo"
+              />
+            </div>
+            <div class="heart-center">💕</div>
+            <div class="photo-frame groom-frame">
+              <img
+                src="assets/img/groom.jpeg"
+                alt="Groom"
+                class="couple-photo"
+              />
+            </div>
+          </div>
 
           <div class="flower-accent accent-top">
             <span class="petal">🌹</span>
@@ -88,34 +106,39 @@
 
           <p class="invitation-text">as we celebrate the union of our lives</p>
 
-          <div class="event-info">
-            <div class="info-item">
-              <h3>
-                <i class="fas fa-heart icon-heart"></i>
-                Wedding Ceremony
-                <i class="fas fa-heart icon-heart"></i>
-              </h3>
-              <p class="date"><i class="icon">📅</i> Saturday, June 15, 2024</p>
-              <p class="time"><i class="icon">⏰</i> 4:00 PM</p>
+          <!-- Event Cards -->
+          <div class="event-cards-container">
+            <!-- Ceremony Card -->
+            <div class="event-card ceremony-card">
+              <div class="card-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Wedding Ceremony</h3>
+              <p class="card-detail">
+                <i class="icon">📅</i> Saturday, June 15, 2024
+              </p>
+              <p class="card-detail"><i class="icon">⏰</i> 4:00 PM</p>
             </div>
 
-            <div class="info-item">
-              <h3>
-                <i class="fas fa-utensils icon-utensil"></i>
-                Reception Dinner
-                <i class="fas fa-utensils icon-utensil"></i>
-              </h3>
-              <p class="time"><i class="icon">🍽️</i> 6:00 PM</p>
+            <!-- Reception Card -->
+            <div class="event-card reception-card">
+              <div class="card-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3>Reception Dinner</h3>
+              <p class="card-detail"><i class="icon">🍽️</i> 6:00 PM</p>
             </div>
 
-            <div class="info-item">
-              <h3>
-                <i class="fas fa-map-marker-alt icon-location"></i>
-                Venue
-                <i class="fas fa-map-marker-alt icon-location"></i>
-              </h3>
-              <p class="location"><i class="icon">📍</i> The Grand Ballroom</p>
-              <p class="address">
+            <!-- Venue Card -->
+            <div class="event-card venue-card">
+              <div class="card-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Venue</h3>
+              <p class="card-detail">
+                <i class="icon">📍</i> The Grand Ballroom
+              </p>
+              <p class="card-address">
                 123 Wedding Lane<br />San Francisco, CA 94102
               </p>
             </div>
